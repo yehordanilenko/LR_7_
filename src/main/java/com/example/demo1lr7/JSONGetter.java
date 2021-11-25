@@ -39,7 +39,7 @@ public class JSONGetter extends Thread{
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            return jsonIn="Couldn't find API";
         }
 
         return jsonIn;

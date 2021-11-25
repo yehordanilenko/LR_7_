@@ -3,27 +3,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class ObsList {
+public class CurrencyObservableList {
     @JsonProperty("metas")
-    ObservableList<Meta> metas;
+    ObservableList<BankCurrency> metas;
 
-    public ObsList() {
+    public CurrencyObservableList() {
         metas = FXCollections.observableArrayList();
     }
-    public ObservableList<Meta> getMetas() {
+    public ObservableList<BankCurrency> getMetas() {
         return metas;
     }
 
-    public void add(Meta meta) {
+    public void add(BankCurrency meta) {
         this.metas.add(meta);
     }
 
-    public ObsList filterByCCY(String ccy) {
-        ObsList tempRats = new ObsList();
-        for (Meta meta : this.metas) {
+    public CurrencyObservableList filterByCCY(String ccy) {
+        CurrencyObservableList tempRats = new CurrencyObservableList();
+        for (BankCurrency meta : this.metas) {
             if (meta.getTxt().toLowerCase().contains(ccy.toLowerCase()))
                 tempRats.add(meta);
         }

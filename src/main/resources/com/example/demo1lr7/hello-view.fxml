@@ -3,20 +3,26 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.demo1lr7.HelloController">
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #ffff00;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1lr7.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <children>
-      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="r030" prefWidth="75.0" text="r030" />
-          <TableColumn fx:id="txt" prefWidth="75.0" text="txt" />
-            <TableColumn fx:id="rate" prefWidth="75.0" text="rate" />
-            <TableColumn fx:id="cc" prefWidth="75.0" text="cc" />
-            <TableColumn fx:id="exchangedate" prefWidth="75.0" text="exchangedate" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <Label fx:id="correctLabel" minHeight="18.0" minWidth="90.0" />
+        <Button fx:id="button" mnemonicParsing="false" onAction="#loadCurrency" prefHeight="44.0" prefWidth="228.0" style="-fx-background-color: #00ff00;" text="Загрузка данных" textAlignment="CENTER" textFill="#1d00ff">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+        <TableView fx:id="table" minWidth="500.0" prefHeight="210.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="r030" minWidth="75.0" text="r030" />
+                <TableColumn fx:id="txt" minWidth="-1.0" prefWidth="219.0" text="txt" />
+                <TableColumn fx:id="rate" minWidth="57.0" prefWidth="57.0" text="rate" />
+                <TableColumn fx:id="cc" minWidth="75.0" text="cc" />
+                <TableColumn fx:id="exchangedate" minWidth="149.0" text="exchangedate" />
+            </columns>
+        </TableView>
+    </children>
 </VBox>
