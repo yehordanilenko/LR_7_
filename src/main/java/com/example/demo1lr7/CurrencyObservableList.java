@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 
 public class CurrencyObservableList {
     @JsonProperty("metas")
+    final
     ObservableList<BankCurrency> metas;
 
     public CurrencyObservableList() {
@@ -17,16 +18,6 @@ public class CurrencyObservableList {
     public void add(BankCurrency meta) {
         this.metas.add(meta);
     }
-
-    public CurrencyObservableList filterByCCY(String ccy) {
-        CurrencyObservableList tempRats = new CurrencyObservableList();
-        for (BankCurrency meta : this.metas) {
-            if (meta.getTxt().toLowerCase().contains(ccy.toLowerCase()))
-                tempRats.add(meta);
-        }
-        return tempRats;
-    }
-
 
 
     @Override

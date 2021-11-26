@@ -1,24 +1,25 @@
 package com.example.demo1lr7;
 
+import java.io.Serial;
 import java.io.Serializable;
-import java.util.Comparator;
 
 public class BankCurrency implements Serializable {
 
+    @Serial
     private final static long serialVersionUID = 4976987307641598477L;
 
     private long r030;
     private String txt;
     private double rate;
     private String cc;
-    private String exchangedate;
+    private String exchangeDate;
 
-    public BankCurrency(long r030, String txt, double rate, String cc, String exchangedate) {
+    public BankCurrency(long r030, String txt, double rate, String cc, String exchangeDate) {
         this.setR030(r030);
         this.setTxt(txt);
         this.setRate(rate);
         this.setCc(cc);
-        this.setExchangedate(exchangedate);
+        this.setExchangeDate(exchangeDate);
     }
 
     public BankCurrency() {
@@ -57,12 +58,12 @@ public class BankCurrency implements Serializable {
         this.cc = cc;
     }
 
-    public String getExchangedate() {
-        return exchangedate;
+    public String getExchangeDate() {
+        return exchangeDate;
     }
 
-    public void setExchangedate(String exchangedate) {
-        this.exchangedate = exchangedate;
+    public void setExchangeDate(String exchangeDate) {
+        this.exchangeDate = exchangeDate;
     }
 
 

@@ -1,12 +1,11 @@
 package com.example.demo1lr7;
 import java.io.*;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.concurrent.TimeUnit;
+import java.nio.charset.StandardCharsets;
 
 public class JSONGetter extends Thread{
 
-    public String jsonIn;
+    public String jsonIn="";
     public static String url;
 
     public String readAll(Reader rd) throws IOException {
@@ -18,13 +17,13 @@ public class JSONGetter extends Thread{
         return sb.toString();
     }
 
-    public String ConnectAndGetData() {
+    public void ConnectAndGetData() {
         jsonIn = "";
-        InputStream is = null;
+        InputStream is;
         try {
             is = new URL(url).openStream();
             try {
-                BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+                BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 try {
                     jsonIn = readAll(rd);
 
@@ -39,10 +38,9 @@ public class JSONGetter extends Thread{
                 }
             }
         } catch (IOException e) {
-            return jsonIn="Couldn't find API";
+            jsonIn = "Couldn't find API";
         }
 
-        return jsonIn;
     }
 
     @Override
